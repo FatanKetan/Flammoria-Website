@@ -1,0 +1,523 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; 
+  font-family: Arial, sans-serif;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.hero {
+  scroll-margin-top: 80px;
+}
+
+.about-us{
+  scroll-margin-top: 40px;
+}
+
+.activities1, .featured-performances {
+  scroll-margin-top: 80px;
+}
+
+/* ---Navbar--- */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 35px;
+  background: #f7d1ce;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  position: sticky;
+  z-index: 10;
+  top: 0;
+}
+
+.navbar .logo h1 {
+  color: #d32f2f;
+}
+
+.navbar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.navbar ul li a {
+  text-decoration: none;
+  color: black;
+  font-weight: bold;
+  transition: 0.3s;
+}
+
+.navbar ul li a:hover {
+  color: #d32f2f;
+}
+
+.logo {
+  display: flex;        
+  align-items: center;   
+  gap: 10px;              
+}
+
+.logo-img {
+  height: 40px;           
+  width: auto;            
+}
+
+.fancy-title {
+  font-family: 'Pacifico', cursive;
+  font-weight: 600;
+  font-size: 25px;
+  color: black;
+  text-shadow: 5px 5px 5px rgba(255, 255, 255, 0.8);
+  letter-spacing: 2px;
+}
+
+/* ---Home--- */
+.hero {
+  position: relative; 
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  height: 100vh;
+  background: url('img/bekgron3.jpg') no-repeat center center/cover; 
+  color: white;
+  padding: 40px;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 600px;
+  padding: 20px;
+  border-radius: 10px;
+  color: black;
+
+  display: flex;              /* bikin flex container */
+  flex-direction: column;     /* isi ditumpuk ke bawah */
+  align-items: flex-start;    /* biar rata kiri */
+}
+
+.hero h1 {
+  font-size: 48px;
+  margin-bottom: 20px;
+}
+
+.hero p {
+  font-size: 15px;
+  line-height: 1.5;
+}
+
+.btn-hero {
+  display: inline-block;  /* tetap bentuk tombol, tapi baris baru */
+  margin-top: 20px;       /* jarak dari teks */
+  padding: 12px 25px;
+  background: #d32f2f;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
+  border-radius: 8px;
+  text-decoration: none;
+  transition: 0.3s;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-hero:hover {
+  background: #b71c1c;
+  transform: scale(1.05);
+}
+
+/* ---About Us--- */
+.about-us {
+  padding: 30px 5px; 
+  background-color: #fcdad7;   
+}
+
+.about-content {
+  max-width: 100%;     
+  margin: 0;          
+}   
+
+.about-content h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+}
+
+.about-content p {
+  font-size: 20px;
+  line-height: 1.6;
+  color: black;                  /* warna isi huruf */
+  margin-bottom: 25px;
+  text-align: center;
+}
+
+.teams {
+  display: flex;
+  gap: 20px;
+  overflow-x: auto;
+  padding: 0;            
+  margin: 0;               
+  scroll-snap-type: x mandatory;
+  padding-bottom: 15px ;
+}
+
+.teams::-webkit-scrollbar {
+  height: 8px;   /* tinggi scrollbar (horizontal) */
+}
+
+.teams::-webkit-scrollbar-track {
+  background: white;   /* warna jalurnya */
+  border-radius: 10px;
+}
+
+.teams::-webkit-scrollbar-thumb {
+  background: #d32f2f;   /* warna bar-nya */
+  border-radius: 10px;
+}
+
+.teams::-webkit-scrollbar-thumb:hover {
+  background: #a51f1f;   /* warna pas hover */
+}
+
+.team {
+  position: relative;
+  flex: 0 0 280px;
+  height: 350px;
+  border-radius: 0; 
+  overflow: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  border-radius: 12px;
+  border: 4px solid #fff;   /* garis putih */
+  border-radius: 12px;
+  cursor: pointer;
+  overflow-y: hidden;
+}
+
+.team:hover{
+  transform: scale(1.01);
+
+}
+
+.team::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.team h3 {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 8px 0;
+  font-size: 18px;
+  font-weight: bold;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.team ul {
+  position: relative;
+  z-index: 1;
+  margin: 0 0 8px 20px;
+  padding: 0;
+  font-size: 14px;
+  line-height: 1.4;
+  color: #eee; /* biar lebih jelas di atas background */
+}
+
+.team p {
+  position: relative;
+  z-index: 1;
+  font-size: 16px;        /* samain biar seimbang */
+  color: #fff;            /* putih biar jelas di atas background */
+  line-height: 1.4;
+  margin: 0;              /* samain dengan card lain */
+  text-align: left;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+
+
+/* ---Activities--- */
+.activities1{
+  display: flex;
+  justify-content: center;
+  padding: 30px 15px; 
+  background-color: #fcdad7;
+}
+
+.activities-content {
+  max-width: 100%;     
+  margin: 0;          
+}   
+
+.activities-content h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+}
+
+.activities2{
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.activity {
+  position: relative;
+  flex: 0 0 280px;
+  height: 350px;
+  border-radius: 0; 
+  overflow: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  border-radius: 12px;
+  border: 4px solid #fff;   /* garis putih */
+  border-radius: 12px;
+  cursor: pointer;
+}
+.activity:hover{
+  transform: scale(1.01);
+  transition: 0.2s;
+}
+.activity::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.activity h3{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.activity p{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* ---perfomances--- */
+.performances1{
+  display: flex;
+  justify-content: center;
+  padding: 30px 164px; 
+  background-color: #fcdad7;   
+}
+
+.performances-content {
+  max-width: 100%;     
+  margin: 0;          
+}   
+
+.performances-content h2 {
+  font-size: 32px;
+  margin-bottom: 30px;
+  text-align: center;
+  color: black;
+}
+
+.performances2{
+  display: flex;
+  gap: 20px;
+  overflow-y: hidden;
+  width: 100%;
+  max-width: 100vw;
+  padding: 0;
+  margin: 0;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  overflow-x: hidden;
+  position: relative;
+}
+
+.performance {
+  position: relative;
+  flex: 0 0 280px;
+  height: 350px;
+  border-radius: 0; 
+  overflow: hidden;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 20px;
+  background-size: cover;
+  background-position: center;
+  text-align: left;
+  border-radius: 12px;
+  border: 4px solid #fff;   /* garis putih */
+  border-radius: 12px;
+  cursor: pointer;
+}
+.performance:hover{
+  transition: 0.2s;
+  transform: scale(1.01);
+}
+.performance::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.4);
+}
+
+.performance h3{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+.performance p{
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  text-shadow: 0 2px 5px rgba(0,0,0,0.8);
+}
+
+/* ---Footer--- */
+footer {
+  text-align: center;
+  padding: 10px;
+  background: #f7d1ce;
+}
+
+/* popup */
+.detail {
+  display: none; /* default hidden */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.detail .detail-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+.detail .content {
+  position: relative;      /* biar tombol close stay */
+  width: 70vw;
+  min-height: 40vh;
+  max-height: 90vh;
+  background: #fcdad7;
+  border: 8px solid white;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  animation: zoomIn 0.3s ease-out forwards;
+  overflow: hidden;
+}
+
+.detail .content .close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #333;
+}
+
+#detail-heading{
+  font-size: 30px;
+  color: #111;
+}
+#detail-desc{
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  color: #222;
+}
+
+.detail .content .content-desc {
+  width: 100%;
+  max-height: 80vh;
+  overflow-y: auto;
+  padding: 20px;
+  text-align: left;
+}
+
+.detail .content .content-logo {
+  width: 250px;
+  height: 250px;
+  border-radius: 14px;  /* samain aja sama border luar */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 140px;
+  cursor: pointer;
+  color: var(--box-list-colour);
+}
+
+#detail-heading {
+  font-size: 30px;
+  color: #111;
+}
+#detail-desc {
+  font-family: 'Nunito', sans-serif;
+  font-size: 18px;
+  color: #222;
+}
+
+.close-button {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #333;
+}
+
+@keyframes zoomIn {
+  from { transform: scale(0.8); opacity: 0; }
+  to   { transform: scale(1); opacity: 1; }
+}
+
